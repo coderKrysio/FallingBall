@@ -1,0 +1,114 @@
+<!--All images and audio are not my property. All credits to its official owner-->
+<!--Sources of image: Flaticon, Opengameart
+Souces of audio: Opengameart-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Game</title>
+    <!--Website icon-->
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+
+    <!--Tailwind css and style sheet-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+</head>
+<body>    
+    <div id="holder">
+        <!-- adding a UI panel to display the score and the start button -->
+        <div class="absolute inset-0 flex justify-center items-center z-10" id="modalEl">
+            <div class="max-w-md w-full p-6 text-center" style="background-color: brown;">
+
+                <h1 class="text-4xl font-bold select-none" id="title">F a l l i n g&nbsp;&nbsp;B a l l</h1>              
+
+                <div class="py-1 text-lg select-none" id="instruction">
+                    <p>Run away from the spooky-spikes <br> How to Play?</p>
+
+                    <div class="flex items-center justify-center">
+                        <img src="left-arrow.png" alt="left Arrow Key" width="15">
+
+                        <p>&nbsp;: Press left-arrow key to move left</p>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <img src="right-arrow.png" alt="Right Arrow Key" width="15"> 
+
+                        <p>&nbsp;: Press right-arrow key to move right</p>
+                    </div>
+
+                    <br>
+                    <p>Click on 'Use Touchpad' to use the onscreen controls</p>
+                </div>
+
+                <p class="text-4xl font-bold select-none" id="gameovertxt">G a m e&nbsp;&nbsp;O v e r</p>
+
+                <h1 class="text-4xl font-bold select-none" id="bigScoreEl">0</h1>
+                <p class="text-m text-gray-600 mb-4" id="textScoreEl">Your Score</p>
+
+                <h1 class="text-4xl font-bold leading-none" id="bigHighScoreEl" style="font-family: 'Bungee Inline', cursive; color: khaki;"></h1>
+                <p class="text-m text-gray-600 mb-4" style="font-family: 'Genos', sans-serif; color: cornsilk;">High Score</p>
+
+                <p class="text-3xl text-gray-600 mb-4" id="newHighScoreText">!! New High Score !!</p>
+                
+                <div>
+                    <button class="w-full py-3 rounded-full text-m select-none focus:outline-none" id="startGameBtn" style="font-family: 'Aldrich', sans-serif; background-color: gold; color: brown;">S t a r t</button>
+                </div>
+
+                <div>
+                    <button class="w-full rounded-full text-m select-none py-2 mt-2 focus:outline-none" id="instBtn">I n s t r u c t i o n s</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Game board-->
+        <div id="gameboard">
+            <div class="grid grid-cols-2 grid-rows-1">
+                <div class="text-m select-none" id="scoreDisplay">
+                    <span>Score: </span>
+                    <span id="scoreEl">0</span>
+                </div>
+            
+                <div class="text-right text-m select-none" id="highscoreDisplay">
+                    <span>Best: </span>
+                    <span id="highscoreEl"></span>
+                </div>
+            </div>
+    
+            <div class="w-400 h-511" id="board">
+                <div id="spikes"></div>        
+                <div id="game">
+                    <div id="character"></div>
+                </div>        
+                <div id="platform"></div>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <button class="text-center text-lg m-auto select-none focus:outline-none" id="usetouchpad">+ Use Touchpad</button>
+            </div>
+
+            <div class="w-200 h-20 grid grid-cols-2 grid-rows-1 gap-x-32 content-center" id="touchpad" style="visibility: hidden;">
+                <button class="m-auto mr-0 w-20 select-none focus:outline-none" id="left">
+                    <img src="left-arrow-ui.png" alt="left-arrow">
+                </button>    
+
+                <button class="m-auto ml-0 w-20 select-none focus:outline-none" id="right">
+                    <img src="right-arrow-ui.png" alt="right-arrow">
+                </button>          
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

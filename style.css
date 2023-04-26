@@ -1,0 +1,144 @@
+:root{
+    --gamewidth: 400px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: black;
+}
+
+#holder{
+    width: var(--gamewidth);
+    height: 545px;
+    margin: auto;
+    margin-top: 0;
+    position: relative;
+}
+
+#title{
+    font-family: 'Black Ops One', cursive; 
+    color: gold;
+}
+
+#instruction p, #usetouchpad{
+    font-family: 'Genos', sans-serif; 
+    color: cornsilk;
+}
+
+#instruction img{
+    float: left;
+    -webkit-filter: grayscale(1) invert(1); 
+    filter: grayscale(1) invert(1);
+}
+
+#bigScoreEl{
+    font-family: 'Bungee Inline', cursive; 
+    color: khaki;
+    display: none;
+}
+
+#textScoreEl, #newHighScoreText{
+    font-family: 'Genos', sans-serif; 
+    color: cornsilk;
+    display: none;
+}
+
+#scoreDisplay, #highscoreDisplay{
+    font-family: 'Holtwood One SC', serif; 
+    color: ivory;
+    visibility: hidden;
+}
+
+#instBtn{
+    font-family: 'Aldrich', sans-serif; 
+    background-color: gold; 
+    color: brown;
+    display: none;
+}
+
+#gameovertxt{
+    font-family: 'Black Ops One', cursive; 
+    color: gold;
+    display: none;
+}
+
+#gameBoard{
+    width: var(--gamewidth);
+    height: 535px;
+    z-index: 0;
+    border: 1px solid yellow;
+}
+
+#board{
+    background-image: url("./images/backgroundColorFall.png");
+    background-size: 400px 535px;
+    overflow: hidden;
+}
+
+#spikes{
+    width: var(--gamewidth);
+    height: 40px;
+    background-image: url("./images/long_metal_spike.png");
+    background-repeat: space repeat-x;
+    background-size: 25px 40px;
+    visibility: hidden;
+}
+
+#platform{
+    width: var(--gamewidth);
+    height: 20px;
+    background-image: url("./images/platform_single.png");
+    background-repeat: space;
+    background-size: 25px 25px;
+    visibility: hidden;
+}
+
+#game{
+    width: var(--gamewidth);
+    height: 450px;
+}
+
+#character{
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    top: 370px;
+    left: 190px;
+    z-index: 1000000; /*to make sure it is always on top*/
+    visibility: hidden;
+}
+
+.block1{
+    height: 20px;
+    background-image: url("./images/platform_single.png");
+    background-repeat: space repeat-x;
+    background-size: 25px 25px;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+.block2{
+    height: 20px;
+    background-image: url("./images/platform_single.png");
+    background-repeat: space repeat-x;
+    background-size: 25px 25px;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+.hole{
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+#left img, #right img{
+    pointer-events: none;
+}
